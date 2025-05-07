@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CS 5200 Database Systems - Fall 2023</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CS 5200 Database Management Systems – Fall 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono&display=swap" rel="stylesheet">
   <style>
     body {
@@ -11,29 +11,33 @@
       background-color: #fdf6e3;
       color: #333;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
+      padding: 2em;
+      line-height: 1.7;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     header, footer {
       background-color: #f5deb3;
-      padding: 1em;
+      padding: 1.5em;
       text-align: center;
+      margin-bottom: 2em;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       color: #5a3e1b;
+      margin-top: 1.5em;
     }
 
     section {
-      padding: 1.5em;
-      border-bottom: 1px solid #dcd0c0;
+      margin-bottom: 2em;
     }
 
     .grading {
       background-color: #ffe4b5;
-      padding: 1em;
       border: 2px dashed #b8860b;
+      padding: 1em;
     }
 
     .ta-panel {
@@ -55,9 +59,21 @@
       background-color: #c0a16b;
     }
 
+    a {
+      color: #5a3e1b;
+    }
+
     footer {
       font-size: 0.9em;
       color: #555;
+    }
+
+    ul {
+      padding-left: 1.2em;
+    }
+
+    pre {
+      white-space: pre-wrap;
     }
   </style>
 </head>
@@ -65,85 +81,405 @@
 
   <header>
     <h1>CS 5200: Database Management Systems</h1>
-    <h2>Northeastern University – Fall 2023</h2>
+    <!-- dynamic changes -->
+    <h2>The Roux Institute,Northeastern University – Fall 2025</h2>  
   </header>
 
   <section id="instructor">
     <h2>Instructor</h2>
-    <p><strong>Dr. Scott Valcourt</strong></p>
-    <p>Email: <a href="mailto:s.valcourt@northeastern.edu">s.valcourt@northeastern.edu</a></p>
-    <p>Phone: 603-380-2860</p>
-    <p>Office Hours: Tuesdays 11am–12pm ET (or by appointment)</p>
-    <p>Zoom: <a href="https://northeastern.zoom.us/j/91454590124" target="_blank">Join here</a></p>
+    <div class="ta-panel">
+      <p><strong>Dr. Scott Valcourt</strong></p>
+      <p>Email: s.valcourt@northeastern.edu</p>
+      <p>Phone: 603-380-2860 (mobile)</p>
+      <p>Class Meetings: Room 138, Thursdays 1:00pm-4:20pm ET</p>
+      <p>Office Hours: Tuesdays 11:00am-12:00pm ET</p>
+      <p>By Appointment</p>
+      <p>Zoom: <a href="https://northeastern.zoom.us/j/91454590124">https://northeastern.zoom.us/j/91454590124</a></p>
+    </div>
   </section>
-
-  <section id="topics">
-    <h2>Topics & Course Calendar</h2>
-    <p>Refer to the course calendar PDF for weekly topics. This section can be modularly edited per semester.</p>
-  </section>
+    <!-- dynamic changes for the TA section -->
 
   <section id="ta">
     <h2>Teaching Assistants</h2>
     <div id="ta-container" class="ta-panel"></div>
     <button onclick="toggleTAs()">Toggle TA Info</button>
   </section>
-
+  <section id="calendar">
+    <h2>Course Calendar</h2>
+    <div style="overflow-x: auto;">
+      <style>
+        table.course-calendar {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 1em;
+          font-size: 0.95em;
+        }
+        .course-calendar th, .course-calendar td {
+          border: 2px solid #ddd;
+          padding: 10px;
+          text-align: left;
+          vertical-align: top;
+        }
+        .course-calendar thead {
+          background-color: #f5deb3;
+        }
+        .course-calendar tbody tr:nth-child(even) {
+          background-color: #fdfaf3;
+        }
+        .course-calendar tbody tr:hover {
+          background-color: #fff1d6;
+        }
+      </style>
+  
+      <table class="course-calendar">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Week</th>
+            <th>Topics</th>
+            <th>Readings</th>
+            <th>Assignments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sept 7</td>
+            <td>Week 1</td>
+            <td>Course Introduction, DBMS Concepts, DB Architecture, Relational Data Model, Relational Algebra, Installation of Platforms for the Course</td>
+            <td>Read Chapter 1</td>
+            <td>HW1 (Sep 15)<br>Quiz 1 (Sep 15)</td>
+          </tr>
+          <tr>
+            <td>Sept 14</td>
+            <td>Week 2</td>
+            <td>SQL Platform Introduction, SQL (SELECT, INSERT, UPDATE, DELETE), DDL, Programming with SQL</td>
+            <td>Read Chapter 5</td>
+            <td>HW2 (Sep 22)<br>Quiz 2 (Sep 22)</td>
+          </tr>
+          <tr>
+            <td>Sept 21</td>
+            <td>Week 3</td>
+            <td>SQL Programming – JOIN, SET, Statistical queries</td>
+            <td>Read Codd Paper, Boyce Paper</td>
+            <td>HW3 (Sep 29)<br>Quiz 3 (Sep 29)</td>
+          </tr>
+          <tr>
+            <td>Sept 28</td>
+            <td>Week 4</td>
+            <td>SQL Programming - Update Operations and Anomalies; Normalization</td>
+            <td>Read Chapter 4</td>
+            <td>HW4 (Oct 6)<br>Quiz 4 (Oct 6)</td>
+          </tr>
+          <tr>
+            <td>Oct 5</td>
+            <td>Week 5</td>
+            <td>Conceptual Model, ER Diagrams, Project Introduction</td>
+            <td>Read Chapters 2 & 3</td>
+            <td>HW5 (Oct 13)<br>Quiz 5 (Oct 13)<br>Project Design Check-in (Nov 10)</td>
+          </tr>
+          <tr>
+            <td>Oct 12</td>
+            <td>Week 6</td>
+            <td>Logical Model, Integrity Constraints</td>
+            <td>Read Chapter 6</td>
+            <td>HW6 (Oct 20)<br>Quiz 6 (Oct 20)</td>
+          </tr>
+          <tr>
+            <td>Oct 19</td>
+            <td>Week 7</td>
+            <td>Data Warehousing</td>
+            <td>Read Chapters 7 & 8</td>
+            <td>HW7 (Oct 27)<br>Quiz 7 (Oct 27)</td>
+          </tr>
+          <tr>
+            <td>Oct 26</td>
+            <td>Week 8</td>
+            <td>Indexing, Physical Design, Project Revisions</td>
+            <td>Read Chapter 9</td>
+            <td>HW8 (Nov 3)<br>Quiz 8 (Nov 3)<br>Project Due (Dec 8)</td>
+          </tr>
+          <tr>
+            <td>Nov 2</td>
+            <td>Week 9</td>
+            <td>NoSQL, Data Lakes, Transactions, Concurrency</td>
+            <td>Read Chapter 10 & Appendix 10</td>
+            <td>HW9 (Nov 10)<br>Quiz 9 (Nov 10)</td>
+          </tr>
+          <tr>
+            <td>Nov 9</td>
+            <td>Week 10</td>
+            <td>Administration, Recovery, Security, Distributed Databases</td>
+            <td>Read Chapter 11 & Appendix 7</td>
+            <td>HW10 (Nov 17)<br>Quiz 10 (Nov 17)</td>
+          </tr>
+          <tr>
+            <td>Nov 16</td>
+            <td>Week 11</td>
+            <td>Programming, Web Development</td>
+            <td>Read Appendix 9</td>
+            <td>HW11 (Dec 1)<br>Quiz 11 (Dec 1)</td>
+          </tr>
+          <tr>
+            <td>Nov 23</td>
+            <td>—</td>
+            <td><strong>No Class – University Holiday</strong></td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Nov 30</td>
+            <td>Week 12</td>
+            <td>TBD</td>
+            <td>TBD</td>
+            <td>TBD</td>
+          </tr>
+          <tr>
+            <td>Dec 7</td>
+            <td>Week 13</td>
+            <td>Final Project Wrap Up, Preparations for Final Exam</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Dec 8–15</td>
+            <td>Finals Week</td>
+            <td colspan="3">Final Exam</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
   <section id="syllabus">
     <h2>Syllabus</h2>
-    <p>This course introduces RDBMS concepts including SQL, relational algebra, ER diagrams, normalization, and more.</p>
+    <pre>
+This course introduces relational database management systems (RDBMS) as a class of software systems and prepares students to be sophisticated users of database management systems. Covers design theory, query language, and performance/tuning issues. Topics include relational algebra, SQL, stored procedures, user-defined functions, cursors, embedded SQL programs, client-server interfaces, entity-relationship diagrams, normalization, B-trees, concurrency, transactions, database security, constraints, object-relational DBMSs, and specialized engines such as spatial, text, XML conversion, and time series. Includes exercises using a commercial relational or object-relational database management system.
+
+To learn these concepts, the instructor will employ the following methods known to be effective in transferring knowledge:
+
+- Lectures will focus on developing a conceptual understanding of database design & usage, as well as DBMS implementation.
+- Homework will ask students to apply their conceptual knowledge via problems and code implementation.
+- Project will allow students to collaboratively complete a database application from start to finish, including design & creation/optimization within a DBMS, as well as a programmatic user-interface.
+    </pre>
   </section>
 
   <section id="goals">
     <h2>Learning Goals</h2>
-    <ul>
-      <li>Design normalized relational schemas</li>
-      <li>Write SQL queries (DDL, DML, DCL)</li>
-      <li>Understand transactions, indexes, constraints</li>
-      <li>Build DB-backed applications with UI</li>
-    </ul>
+    <pre>
+At the end of CS 5200, a student should be able to do the following:
+1. Explain the principles and characteristics of good relational database design.
+2. Design entity relationship models for a business problem domain verified by the rules of normalization (through third normalized form).
+3. Build simple to moderately complex data models that solve business problems.
+4. Compare and contrast the data definition language (DDL), data manipulation language (DML) and data control language (DCL) components of Structured Query Language (SQL).
+5. Write simple to moderately complex SQL queries in a multiple table environment.
+6. Write SQL to create tables and indexes, insert rows, delete rows, update rows, drop tables and indexes and alter the database.
+7. Understand the concept of database transactions and demonstrate the proper use of commits and rollbacks.
+8. Create and use SQL scripts.
+9. Have an awareness of contemporary issues in database design and development.
+10. Install, configure, manage, and maintain a database system.
+    </pre>
   </section>
 
   <section id="books">
     <h2>Reference Books</h2>
-    <p><strong>Introduction to Databases and Data Warehouses</strong>, Jukić et al., 2nd Edition, Prospect Press</p>
-    <a href="https://www.prospectpressvt.com/textbooks/jukic-database-systems-introduction-to-databases-and-data-warehouses-2-0" target="_blank">Book Link</a>
+    <pre style="white-space: pre-wrap;">
+  Introduction to Databases and Data Warehouses
+  - Nenad Jukić, Susan Vrbsky, Svetlozar Nestorov, Abhishek Sharma, 2021
+  - Edition 2.0
+  - Prospect Press, ISBN 978-1-943153-68-8
+    </pre>
+    <a href="https://www.prospectpressvt.com/textbooks/jukic-database-systems-introduction-to-databases-and-data-warehouses-2-0" target="_blank">
+      Visit Book Page on Prospect Press
+    </a><br>
+    <img src="assets/book.jpeg" alt="Database Book Cover" style="max-width: 300px; margin-top: 1em; border: 1px solid #ccc;">
   </section>
+  
 
   <section id="grading" class="grading">
-    <h2>Grading Policy</h2>
-    <ul>
-      <li>Homework Assignments: 50%</li>
-      <li>Quizzes: 10%</li>
-      <li>Project: 20%</li>
-      <li>Final Exam: 20%</li>
-    </ul>
-    <p>Retake quizzes up to mastery (85%). Time travel days allow late submissions with minimal penalty.</p>
+    <h2>Grading</h2>
+    <pre style="white-space: pre-wrap;">
+  The goal of this course is to teach you the material to a certain level of mastery. Quizzes will 
+  provide you with rapid and frequent feedback about how well you understand the most recent 
+  topic. The homework assignments will give you practice with detailed problems associated with 
+  the material covered in class and related to the textbook readings. The project, which we will 
+  detail in depth later in the course when the terminology makes more sense, will offer you the 
+  opportunity to apply your skills in a structured way to deploy a sample database system of your 
+  choosing. 
+  
+  Assessment will be based on quizzes, homework assignments, a major database project, and 
+  the mid-term and final exams. Attendance and participation also will not factor into your final 
+  grade. You are responsible for your own actions and the consequences of not attending class.
+  
+  Quizzes will be graded and handed back with feedback for any problem you attempt. You will be 
+  able to retake a quiz as many times as you wish for up to a week until you demonstrate 
+  mastery, defined as a score of at least 85%. 
+  
+  Homework Assignments will be graded and handed back with feedback. 
+  
+  All Homework Assignments will be graded out of 100 points. An ‘A’ grade requires clearly 
+  offered answers that indicate depth of understanding of the material in the assignment. A ‘C’ 
+  grade is presented when the assignment is completed with technically correct answers, but not 
+  much more is offered. A ‘F’ grade is earned when the assignment has too many flaws or blank 
+  responses to know if the material learning has been achieved.
+    </pre>
+  
+    <table style="width: 100%; margin-top: 1em; border-collapse: collapse;">
+      <thead>
+        <tr style="background-color: #f5deb3;">
+          <th style="text-align: left; padding: 8px; border: 1px solid #b8860b;">Component</th>
+          <th style="text-align: left; padding: 8px; border: 1px solid #b8860b;">Weight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #b8860b;">Homework Assignments</td>
+          <td style="padding: 8px; border: 1px solid #b8860b;">50%</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #b8860b;">Quizzes</td>
+          <td style="padding: 8px; border: 1px solid #b8860b;">10%</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #b8860b;">Project</td>
+          <td style="padding: 8px; border: 1px solid #b8860b;">20%</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border: 1px solid #b8860b;">Final Exam</td>
+          <td style="padding: 8px; border: 1px solid #b8860b;">20%</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
+  
 
   <section id="late-policy">
     <h2>Late Policy</h2>
-    <p>10 points per day late. Up to 3 “time travel days” per assignment (notify instructor before deadline).</p>
+    <pre>
+      You will have immediately after the lecture (~5pm on Thursdays) to make your first attempt at 
+      the quiz each week. You may continue to retake the quiz until the due date of the quiz (usually 
+      eight (8) days later on Fridays, sometimes longer for holidays) or until you demonstrate mastery, 
+      defined as 85%, whichever comes first. 
+      <br>
+      Weekly homework assignments will be available by the end of the class meeting each week 
+      (~4pm Thursdays).  Homework assignments will be due by 11:59pm ET on the following Friday, 
+      offering nearly eight (8) days to complete. You may submit any assignment up to a week after 
+      the regular due date but may be subject to a late penalty of 10 points per day, meaning a 
+      perfect assignment (score of 100) submitted four days late would be subject to an actual score 
+      of 60 (4 days * 10 = 40 points). <br>
+      During the semester, you have eight (8) no fault time travel days to use as you see fit. You may 
+      use your time travel days to hand in an assignment up to three (3) days after the regular 
+      deadline as though you had handed it in on time. Note that you can use at most three (3) days 
+      for any single assignment, and the time travel days are considered integers (no partial days). To 
+      use a time travel day, you must notify the professor before the regular deadline via email and 
+      include in your email at least one (1) question about the assignment, justifying your use of time 
+      travel days.
+    </pre>
   </section>
 
   <section id="help">
     <h2>Asking for Help</h2>
-    <p>Follow the 30-minute rule. If stuck, ask a TA, professor, or classmate. Don’t struggle in silence!</p>
+    <pre>
+      Computer Science, particularly databases, may be a brand-new topic for you if you are taking 
+      this course. One of the goals for this course is to show you that databases drive so much of our 
+      daily operations and that this pervasiveness can be fun. This course will be challenging, will 
+      stretch your understanding of concepts, can be difficult, and can be extremely satisfying when 
+      something works correctly. It should not be frustrating, because frustrating things are not 
+      challenging or fun. <br>
+      Frustration occurs when you are working on something and not making progress, especially if 
+      you are not sure about what you are doing. Frustration does not facilitate learning. If you find 
+      yourself getting frustrated, stop. Go do something else--eat some dinner, take a walk--but most 
+      importantly, ask a question. Send an email to the professor or a TA, ask a question in class, talk 
+      with a classmate, or set up a 1:1 session to go over your work.  <br>
+      We do not expect you to complete the assignments entirely on your own.<br>  
+      Please follow the 30-minute rule: if you have been stuck on a problem for more than 30 minutes
+      and have made no progress, despite your best efforts, please stop and get help. Email the 
+      professor, ask a TA, or consult a peer. If you do not get an answer immediately, do something 
+      else for a while. Please do not waste your time on one problem or bug in your code. Asking a 
+      question can both get you past the bug quickly and teach you how to fix it on your own next time.
+    </pre>
   </section>
 
   <section id="honesty">
     <h2>Collaboration & Academic Honesty</h2>
-    <p>Collaboration is encouraged. Cite your discussions. Your submitted work must be your own. Do not copy code from others or the web.</p>
-    <a href="http://www.northeastern.edu/osccr/academic-integrity" target="_blank">Northeastern Academic Integrity Policy</a>
+    <pre>
+      Computer Science, both academically and professionally, is a collaborative discipline. In any 
+      collaboration, however, all parties are expected to make their own contributions and to 
+      generously credit the contributions of others. In our class, therefore, collaboration on homework 
+      and programming assignments is encouraged, but you, as an individual, are responsible for 
+      understanding all the material in the assignment and doing your own work. Always strive to do 
+      your best, give generous credit to others, start early, and seek help early from both your 
+      professors, teaching assistants, and classmates. <br>
+      The following rules are intended to help you get the most out of your education and to clarify the 
+      line between honest and dishonest work. The professor reserves the right to ask you to verbally 
+      explain the reasoning behind any answer or code that you turn in and to modify your project 
+      grade based on your answers. It is vitally important that you turn in work that is your own. Follow 
+      the guidelines for academic honesty or we are done. <br>
+      If you have had a substantive discussion of any homework or programming solution with a 
+      classmate, then be sure to cite them in your report. If you are unsure of what constitutes 
+      "substantive", then ask us or err on the side of caution. You will not be penalized for working 
+      together. You must not copy answers or code from another student either by hand or 
+      electronically. Another way to think about it is that you should be talking English with one 
+      another, not SQL. <br>
+      The following rules apply to anything you hand in for a grade: 
+      <br>
+      • I reserve the right to request you to verbally explain an answer or snippet of code that 
+        you have turned in and to modify your grade on the assignment based on your answers.
+
+      • You may not copy someone else's code or answer under any circumstances. This 
+        includes any online code sources you may have found.
+
+      • You may not post a potential answer to a problem (including any code) to Piazza or 
+        other public forum.
+
+      • You may discuss and work through problems with others, and, in fact, I encourage you 
+        to do so. However, ultimately, your solution that you turn in must be your original work.
+
+      • You may consult online resources as part of your course work, but you may not copy 
+        code from online sources. If you get an idea of how to solve a problem from an online 
+        source, include a short citation in a code block at the top of your source code file. If you 
+        use an online source to help you get to a solution, you must cite that source.
+
+      • You may not look at someone else's code, nor should you let someone else look at your 
+        code. If you need help debugging something, please reach out to the instructor or a TA.
+<br>The university's academic integrity policy discusses actions regarded as violations and 
+consequences for students: http://www.northeastern.edu/osccr/academic-integrity 
+
+    </pre>
   </section>
 
   <section id="titleix">
     <h2>Title IX</h2>
-    <p>Northeastern prohibits gender-based discrimination. Faculty are required to report incidents. Confidential resources are available.</p>
-    <a href="http://www.northeastern.edu/titleix" target="_blank">Northeastern Title IX Resource</a>
+    <pre>
+      Title IX of the Education Amendments of 1972 protects individuals from sex or gender-based 
+      discrimination, including discrimination based on gender-identity, in educational programs and 
+      activities that receive federal financial assistance. <br>
+      Northeastern University’s Title IX Policy addresses Prohibited Offenses, which are defined as 
+      sexual harassment, sexual assault, relationship or domestic violence, and stalking. The Title IX 
+      Policy applies to the entire community, including male, female, transgender students, faculty, 
+      and staff. <br>
+      If you or someone you know has been a survivor of a Prohibited Offense, confidential support 
+      and guidance can be found through University Health and Counseling Services staff 
+      (http://www.northeastern.edu/uhcs/) and the Center for Spiritual Dialogue and Service clergy 
+      members (http://www.northeastern.edu/spirituallife/). By law, those employees are not required 
+      to report allegations of sex or gender-based discrimination to the University. <br>
+      Alleged violations can be reported non-confidentially to the Title IX Coordinator within The Office 
+      for Gender Equity and Compliance at: titleix@northeastern.edu and/or through NUPD 
+      (Emergency 617.373.3333; Non-Emergency 617.373.2121). Reporting Prohibited Offenses to 
+      NUPD does NOT commit the victim/affected party to future legal action. <br>
+      Faculty members are considered "responsible employees" at Northeastern University, meaning 
+      they are required to report all allegations of sex or gender-based discrimination to the Title IX 
+      Coordinator. <br>
+      In case of an emergency, please call campus police. <br>
+      Please visit http://www.northeastern.edu/titleix for a complete list of reporting options and 
+      resources both on- and off-campus.
+    </pre>
   </section>
 
+ 
+  
+
   <footer>
-    &copy; 2023 Dr. Scott Valcourt — All rights reserved.
+    &copy; 2025 Dr. Scott Valcourt – All rights reserved.
   </footer>
 
   <script>
